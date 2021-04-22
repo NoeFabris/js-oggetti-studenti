@@ -13,3 +13,18 @@ function checkInserimentoNum(numero) {
         return num
     }
 }
+
+function checkInserimentoString(text) {
+    num = parseInt(text)
+    space = text
+    console.log(num)
+    if (isNaN(num)) {
+        if (space == '') {
+            check = false
+        } else {
+            check = true   
+        }
+    } else {
+        check = false
+    }
+}

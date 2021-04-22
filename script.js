@@ -51,25 +51,60 @@ var arrayStudents = [
     {
         'name' : 'Noè',
         'surname' : 'Fabris',
-        'age' : '23'  
+        'age' : 23  
     },
     {
         'name' : 'Elena',
         'surname' : 'Eger',
-        'age' : '22'  
+        'age' : 22  
     },
     {
         'name' : 'Mario',
         'surname' : 'Rossi',
-        'age' : '25'  
+        'age' : 25 
     }
 ];
-arrayStudents.push({
-    'name' : prompt('Inserisci il nome dello studente'),
-    'surname' : prompt('Inserisci il cognome dello studente'),
-    'age' : prompt('Inserisci quanti anni ha')
- })
+var check = false
+var numNuoviStudenti = 1
+var studente = {
+    'name' : '',
+    'surname' : '',
+    'age' : ''
+}
 
+while (check === false) {
+    var name = prompt('Inserisci il nome dello studente')
+    checkInserimentoString(name)
+    if (check === false) {
+        alert('Inserisci il nome in lettere')
+    } else {
+        studente['name'] = name
+    }
+}
+check = false
+
+while (check === false) {
+    var surname = prompt('Inserisci il cognome dello studente')
+    checkInserimentoString(surname)
+    if (check === false) {
+        alert('Inserisci il cognome in lettere')
+    } else {
+        studente['surname'] = surname
+    }
+}
+check = false
+
+while (check === false) {
+    var age = checkInserimentoNum(prompt('Inserisci quanti anni ha'))
+    if (check === false) {
+        alert('Inserisci un numero')
+    } else {
+        studente['age'] = age
+    }
+}
+
+console.log(studente)
+arrayStudents.push(studente)
 
 console.log(arrayStudents)
 for (let i = 0; i < arrayStudents.length; i++) {
